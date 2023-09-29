@@ -1,0 +1,124 @@
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;    
+    margin: 0px;
+    width: 100%;
+    height: 30vh;
+    box-sizing: border-box;
+    background-color: #3a4963;
+    padding: 2.5vh 50px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.nav {
+    padding: 0px;
+    list-style-type: none;
+    margin: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s;
+}
+
+.navLi {
+    flex-grow: initial;
+}
+
+.navLink{
+    display: block;
+    padding: 7px;
+    text-decoration: none;
+    transition: all 0.5s;
+    color: white;
+}
+
+.navLink:hover{
+    color: #3a4963;
+    background-color: azure;
+}
+
+.contacto {
+    justify-items: flex-end;
+    margin: 10px 30px;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contacto h3 {
+    margin: 7px;
+    padding: 0px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contacto ul {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.contacto ul li {
+    display: flex;
+    margin: 5px 7px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.contacto li a {
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;    
+}
+
+.contactoLink {
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    margin: 0px;
+    padding: 7px;
+    transition: all 0.5s;
+}
+
+.contactoLink:hover{
+    color: #3a4963;
+    background-color: azure;
+}
+
+.contacto img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        margin: 10px;
+    }
+
+    .contacto {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+        
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        font-size: medium;
+        padding: 10px;
+    }    
+}
+
+    

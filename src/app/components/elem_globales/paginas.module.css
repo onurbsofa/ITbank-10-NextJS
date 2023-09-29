@@ -1,0 +1,38 @@
+.wrapperPaginas {
+    padding: 3vh 200px;
+    min-height: 56vh;
+    box-sizing: content-box;
+    transition: all 0.5s;
+}
+
+.tituloPagina {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #3a4963;
+    margin-bottom: 2vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapperPaginas {
+        padding: 3vh 100px;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .wrapperPaginas {
+        padding: 3vh 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .wrapperPaginas {
+        padding: 3vh 20px;
+    }
+}
+
+
+    

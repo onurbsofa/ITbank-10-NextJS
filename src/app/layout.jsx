@@ -1,6 +1,6 @@
 import PaginaPrincipal from './PaginaPrincipal/page'
 import Navbar from './components/Navbar'
-import './globals.css'
+import "../../styles/globals.css"
 import { Inter } from 'next/font/google'
 import Home from './page'
 
