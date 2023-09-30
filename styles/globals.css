@@ -13,7 +13,30 @@ body {
   justify-content: space-between;
 }
 
+.mainContentWrapper {
+  padding: 20px 200px;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
+}
 
+@media screen and (max-width: 1200px) {
+  .mainContentWrapper {
+      padding: 20px 100px;
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .mainContentWrapper {
+      padding: 20px 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {  
+  .mainContentWrapper {
+      padding: 10px;
+  }
+}
 
 /* Estilos para la sección de banner */
 .banner {

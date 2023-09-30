@@ -1,9 +1,8 @@
 import "../../styles/globals.css"
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar/Navbar'
 import Footer from './components/Footer/Footer'
-
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,9 +24,11 @@ export default function RootLayout({ children }) {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       <body className={inter.className} style={{minHeight: '100vh'}}>
-        <Navbar/>
-          {children}
-        <Footer/>
+          <Navbar/>
+          <div className="mainContentWrapper">
+            {children}
+          </div>          
+          <Footer/>
       </body>
     </html>
   )

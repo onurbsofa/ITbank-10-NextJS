@@ -12,6 +12,7 @@ const Navbar = () => {
               <h2 className={styles.navBarLogo}>ITBANK</h2>
           </button>
         </div>
+        
         <div>
           <ul className={styles.navBarList}>
             <li className={styles.itemList}>Inicio</li>

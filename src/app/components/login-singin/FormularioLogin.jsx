@@ -25,7 +25,7 @@ function LoginCampos({ login }) {
 
   if (isValidEmail && contraseniaUsuario.length >= 8) { // Cambia la validación de contraseña según tus necesidades
     try {
-        const response = await fetch('/api/cuentas', {
+        const response = await fetch('/api/auth', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

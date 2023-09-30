@@ -1,8 +1,6 @@
 import "../../styles/globals.css"
 
-export default async function Home() {
-
-  
+export default async function Home() { 
 
   return (
     <>
