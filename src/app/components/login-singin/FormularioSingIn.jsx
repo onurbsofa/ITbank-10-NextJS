@@ -1,5 +1,8 @@
+'use client'
+
 import { useState } from "react";
-import styles from "./RegisterCampos.module.css";
+import Link from "next/link";
+import styles from "./login-singin.module.css";
 
 function RegisterCampos() {
   const [nombreUsuario, setNombreUsuario] = useState("");
@@ -8,9 +11,7 @@ function RegisterCampos() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (nombreUsuario.length >= 5 && nombreUsuario.length <= 12) {
-      alert(`Usuario creado!`);
-    } else if (nombreUsuario.length === 0) {
-      alert("Su usuario debe contener entre 5 y 12 letras.");
+      
     } else {
       alert("Su usuario debe contener entre 5 y 12 letras.");
     }
@@ -43,7 +44,7 @@ function RegisterCampos() {
         <button type="submit" className={styles.botonFormulario}>Enviar</button>
       </form>
       <p className={styles.textoRegistroCuenta}>
-        ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
+        ¿Ya tienes una cuenta? <Link href="/login">Inicia sesión</Link>
       </p>
     </div>
   );

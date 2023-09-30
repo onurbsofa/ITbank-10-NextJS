@@ -4,6 +4,17 @@
 .color4 { color: #ff7dc6; }
 .color5 { color: #ffaef3; }
 
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
 /* Estilos para la sección de banner */
 .banner {
   display: flex;

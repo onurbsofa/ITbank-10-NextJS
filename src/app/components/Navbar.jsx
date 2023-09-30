@@ -1,8 +1,9 @@
+'use client'
+
 import Link from "next/link"
 import styles from './Navbar.module.css'
 
-const Navbar = () => {
-  
+const Navbar = () => {  
   return (
     <>
       <nav className={styles.navBar}>

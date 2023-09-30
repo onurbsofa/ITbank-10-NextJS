@@ -1,10 +1,10 @@
-import FormularioLogin from "../components/login/FormularioLogin";
+import FormularioSingIn from "../components/login-singin/FormularioSingIn";
 
 export default function page() {
   return (
     <>
       <main>
-        <FormularioLogin />
+        <FormularioSingIn />
       </main>
     </>
   );
