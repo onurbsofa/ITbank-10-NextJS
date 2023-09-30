@@ -1,7 +1,7 @@
+import FormularioLogin from "../components/FormularioLogin";
 
-
-export default function page() {
+export default async function page() {
   return (
-    <div>hola</div>
+  <FormularioLogin/>
   )
 }
