@@ -13,14 +13,14 @@ const page = () => {
     return ( 
         <>
             <TituloPagina contenido={'Cuentas'}/>
-            <div className={styles.contenedor}>
+            <div>
                 <Link href="/cuentas/ARS"className={styles.linkCuenta}>
                     Caja de Ahorro en Pesos: ${saldoARS}          
                 </Link>
                 <h4>Ultimos 5 Movimientos:</h4>
                 <HistorialCuenta Cuenta={'ARS'} ult_5={true}/>
             </div>
-            <div className={styles.contenedor}>
+            <div>
                 <Link href="/cuentas/USD"className={styles.linkCuenta}>
                     Caja de Ahorro en Dolares: ${saldoUSD}
                 </Link>

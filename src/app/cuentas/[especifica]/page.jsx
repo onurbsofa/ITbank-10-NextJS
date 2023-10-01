@@ -17,7 +17,7 @@ function PagCuentaEspecifica({params}) {
     return ( 
         <>
             <TituloPagina contenido={'Caja de Ahorro en ' + (especifica == 'ARS' ? 'Pesos' : 'Dolares')}/>
-            <div className={styles.contenedorSinBorde}>
+            <div>
                 <h2>Saldo: ${parseFloat(saldoCuenta).toFixed(2)}</h2>
                 <h4>Historial de todos los Movimientos:</h4>
                 <HistorialCuenta Cuenta={especifica} ult_5={false}/>

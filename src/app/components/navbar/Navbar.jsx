@@ -2,17 +2,22 @@
 
 import Link from "next/link"
 import styles from './Navbar.module.css'
+import Menu from "./Menu"
 
 const Navbar = () => {  
   return (
     <>
       <nav className={styles.navBar}>
-        <div className={styles.itbankLogo}>
-          <button className={styles.itbankboton}>
-              <h2 className={styles.navBarLogo}>ITBANK</h2>
-          </button>
+        <div>
+          <Menu/>
         </div>
-        
+
+        <div className={styles.itbankLogo}>
+          <Link href="/" className={styles.itbankboton}>
+              <h2 className={styles.navBarLogo}>ITBANK</h2>
+          </Link>
+        </div>   
+
         <div>
           <ul className={styles.navBarList}>
             <li className={styles.itemList}>Inicio</li>
