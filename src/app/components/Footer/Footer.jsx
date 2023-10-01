@@ -20,13 +20,13 @@ function Footer() {
         </a>
       </div>
       <div className={styles['footer-links']}>
-        <Link href="/about">Acerca de ITBANK</Link>
-        <Link href="/contact">Contacto</Link>
-        <Link href="/faq">Preguntas Frecuentes</Link>
+        <Link href="./components/about">Acerca de ITBANK</Link>
+        <Link href="./components/contact">Contacto</Link>
+        <Link href="./components/faq">Preguntas Frecuentes</Link>
       </div>
       <div className={styles['footer-links']}>
-        <Link href="/privacy">Política de Privacidad</Link>
-        <Link href="/terms">Términos y Condiciones</Link>
+        <Link href="./components/privacy">Política de Privacidad</Link>
+        <Link href="./components/terms">Términos y Condiciones</Link>
       </div>
       <div className={styles.copyright}>
         © 2023 ITBank. Todos los derechos reservados.

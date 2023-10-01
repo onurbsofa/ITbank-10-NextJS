@@ -1,4 +1,4 @@
-function Terms() {
+export default function TermsPage() {
     return (
         <div>
             <h2>Términos y Condiciones</h2>
@@ -16,4 +16,3 @@ function Terms() {
     );
 }
 
-export default Terms;

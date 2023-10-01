@@ -1,4 +1,4 @@
-function Privacy() {
+export default function PrivacyPage() {
     return (
         <div>
             <h2>Política de Privacidad</h2>
@@ -16,4 +16,3 @@ function Privacy() {
     );
 }
 
-export default Privacy;

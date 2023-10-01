@@ -1,4 +1,5 @@
-function Faq() {
+export default function FaqPage() {
+
     return (
         <div>
             <h2>Preguntas Frecuentes</h2>
@@ -15,4 +16,3 @@ function Faq() {
     );
 }
 
-export default Faq;

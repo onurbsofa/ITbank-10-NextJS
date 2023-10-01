@@ -1,4 +1,4 @@
-function About() {
+export default function AboutPage() {
     return (
         <div>
             <h2>Sobre ITBANK</h2>
@@ -28,4 +28,3 @@ function About() {
     );
 }
 
-export default About;
