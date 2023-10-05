@@ -5,52 +5,45 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 function LoginCampos({ login }) {
+  
+  const [contraseniaUsuario, setContraseniaUsuario] = useState('');
+  const [nombreUsuario, setNombreUsuario] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [nombreUsuario, setNombreUsuario] = useState("");
-  const [contraseniaUsuario, setContraseniaUsuario] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmailValid = emailRegex.test(nombreUsuario);
+        // Validación del correo electrónico
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValid = emailPattern.test(email);
 
-    if (!isEmailValid) {
-      setIsValidEmail(false);
-      alert("Su correo electrónico no es válido.");
-      return; // Mostrar un mensaje de error para el correo electrónico inválido
-    } else {
-      setIsValidEmail(true);
-  }
+        if (isValid) {
+            const listaCuentas = JSON.parse(localStorage.getItem('Cuentas'));
+            const intentoLogin = {usuario: email, contraseña: password};
 
-  if (isValidEmail && contraseniaUsuario.length >= 8) { // Cambia la validación de contraseña según tus necesidades
-    try {
-        const response = await fetch('/api/auth', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email: nombreUsuario, password: contraseniaUsuario }),
-        });
+            console.log(listaCuentas);
+            console.log(intentoLogin);
 
-        if (response.status === 200) {
-          // Autenticación exitosa, muestra un mensaje o redirige a la página de inicio
-          alert('Inicio de sesión exitoso');
-          // Redirige a la página de inicio o realiza otras acciones necesarias
-        } else if (response.status === 401) {
-          // Credenciales incorrectas, muestra un mensaje de error
-          alert('Usuario o contraseña incorrectos');
+            const usuarioEncontrado = listaCuentas.find((cuenta) => {
+                return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
+              });
+
+            if (listaCuentas.includes(usuarioEncontrado)) {                
+                login();                
+            } else {
+                alert("Usuario o contraseña incorrectos");
+                setEmail('');
+                setPassword('');
+            }
+                
         } else {
-          // Error del servidor, muestra un mensaje de error
-          console.log(response);
-          alert('Error interno del servidor');
+        // El correo electrónico no es válido
+            setIsValidEmail(false);
+            setPassword('');
+            setEmail('');
         }
-      } catch (error) {
-        // Manejo de errores de red u otros errores
-        console.error('Error al realizar la solicitud:', error);
-      }
-    }
-  }
+      };
+  
 
   return (
     <div className={styles.contenedorFormulario}>

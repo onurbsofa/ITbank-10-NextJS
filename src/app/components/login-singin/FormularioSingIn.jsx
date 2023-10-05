@@ -10,13 +10,7 @@ function RegisterCampos() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (nombreUsuario.length >= 5 && nombreUsuario.length <= 12) {
-      
-    } else {
-      alert("Su usuario debe contener entre 5 y 12 letras.");
-    }
   }
-
   return (
     <div className={styles.contenedorFormulario}>
       <form onSubmit={handleSubmit} className={styles.formularioLogin}>
