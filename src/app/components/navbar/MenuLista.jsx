@@ -23,6 +23,9 @@ function MenuLista({isOpen}) {
                 <li className={styles.menuLI}>
                     <Link className={styles.menuLink} href="/Prestamos">Prestamos</Link>
                 </li>
+                <li className={styles.menuLI}>
+                    <Link className={styles.menuLink} href="/conversor">Conversor</Link>
+                </li>
             </ul>
         </>
     );
