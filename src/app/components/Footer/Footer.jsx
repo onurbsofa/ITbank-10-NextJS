@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image';
+import instagram from '../../../app/assets/instagram.svg';
+import facebook from '../../../app/assets/facebook.svg';
+import twitter from '../../../app/assets/twitter.svg';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -8,25 +10,25 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles['footer-social-icons']}>
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faFacebookF} size="lg" style={{ color: "#ffffff" }} />
+        <Image alt="facebook" src={facebook} width={25} height={25} />
         </a>
 
         <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faTwitter} size="lg" style={{ color: "#ffffff" }} />
+        <Image alt="twitter" src={twitter} width={25} height={25}/>
         </a>
 
         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faInstagram} size="lg" style={{ color: "#ffffff" }} />
+        <Image alt="instagram" src={instagram} width={25} height={25} />
         </a>
       </div>
       <div className={styles['footer-links']}>
-        <Link href="./components/about">Acerca de ITBANK</Link>
-        <Link href="./components/contact">Contacto</Link>
-        <Link href="./components/faq">Preguntas Frecuentes</Link>
+        <Link href="/about">Acerca de ITBANK</Link>
+        <Link href="/contact">Contacto</Link>
+        <Link href="/faq">Preguntas Frecuentes</Link>
       </div>
       <div className={styles['footer-links']}>
-        <Link href="./components/privacy">Política de Privacidad</Link>
-        <Link href="./components/terms">Términos y Condiciones</Link>
+        <Link href="/privacy">Política de Privacidad</Link>
+        <Link href="/terms">Términos y Condiciones</Link>
       </div>
       <div className={styles.copyright}>
         © 2023 ITBank. Todos los derechos reservados.
