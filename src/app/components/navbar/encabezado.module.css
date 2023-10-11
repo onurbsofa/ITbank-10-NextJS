@@ -54,7 +54,8 @@
 
 .menuIcono {
     cursor: pointer;
-    margin: 10px;
+    padding: 10px;
+    height: 40px;
 }
 
 .menuLink {
