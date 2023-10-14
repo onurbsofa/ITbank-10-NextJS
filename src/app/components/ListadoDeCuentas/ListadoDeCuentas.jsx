@@ -1,5 +1,5 @@
 import Link from "next/link"
-async function getUsers() {
+async function getUsers() {// aca haces el fetchin de los users completa
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
   const users = await res.json()
  
