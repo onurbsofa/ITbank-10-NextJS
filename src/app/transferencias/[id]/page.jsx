@@ -18,8 +18,8 @@ export async function generateStaticParams() {
     const user = await getUser(params)
   return (
         <div>
-
             <h1>Cuenta de {user.name}</h1>
+            <p>Id: {user.id}</p>
         </div>
   )
 }
