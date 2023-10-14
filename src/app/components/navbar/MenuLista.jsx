@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./encabezado.module.css";
+import styles from './Navbar.module.css'
 
 function MenuLista({isOpen}) {    
 

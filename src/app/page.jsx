@@ -10,7 +10,7 @@ export default async function Home() {
           <img src="https://img.freepik.com/vector-premium/banca-linea-concepto-isometrico-diseno-plano-moderno-banco-electronico-concepto-personas-plantilla-pagina-destino-ilustracion-isometrica-conceptual-diseno-web-grafico_709513-31.jpg" alt="banner" />
         </div>
         <div className="banner-text">
-          <h1>Prestamos a taza cero</h1>
+          <h1>Prestamos a tasa cero</h1>
           <p>¡Solicitá tu préstamo en 3 simples pasos!</p>
           <button className="btn-banner">Quiero saber más</button>
         </div>
