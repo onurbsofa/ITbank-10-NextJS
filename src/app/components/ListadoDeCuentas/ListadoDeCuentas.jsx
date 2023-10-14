@@ -18,8 +18,8 @@ export default function ListadoDeCuentas({ cuentas }) {
 }
 
 export async function getStaticProps() {
-  // Fetch cuentas data from an API or database
-  const res = await fetch('https://example.com/api/cuentas');
+  
+  const res = await fetch('../../api/cuentasBancarias.json');
   const cuentas = await res.json();
 
   return {
@@ -30,9 +30,6 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  // Fetch cuentas data from an API or database
-  const res = await fetch('https://example.com/api/cuentas');
-  const cuentas = await res.json();
 
   // Generate paths for each cuenta
   const paths = cuentas.map((cuenta) => ({
