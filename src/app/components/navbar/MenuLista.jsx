@@ -15,7 +15,7 @@ function MenuLista({isOpen}) {
                     <Link className={styles.menuLink} href="/cuentas">Cuentas</Link>
                 </li>
                 <li className={styles.menuLI}>
-                    <Link className={styles.menuLink} href="/Transferencias">Transferencias</Link>
+                    <Link className={styles.menuLink} href="/transferencias">Transferencias</Link>
                 </li>
                 <li className={styles.menuLI}>
                     <Link className={styles.menuLink} href="/Pagos">Pagos</Link>

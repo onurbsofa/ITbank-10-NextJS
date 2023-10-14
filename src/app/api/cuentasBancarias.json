@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "saldo": 1000
+    },
+    {
+      "id": 2,
+      "nombre": "Pedro",
+      "saldo": 2000
+    },
+    {
+      "id": 3,
+      "nombre": "Maria",
+      "saldo": 3000
+    }
+]
