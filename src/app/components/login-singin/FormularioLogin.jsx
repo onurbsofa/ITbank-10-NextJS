@@ -4,11 +4,13 @@ import styles from './login-singin.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
 import cuentas from '../cuentas/cuentas.json'
+import { redirect, usePathname } from 'next/navigation';
 
-function LoginCampos({ login }) {
+function LoginCampos() {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const path = usePathname()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,15 +23,14 @@ function LoginCampos({ login }) {
             const listaCuentas = cuentas;
             const intentoLogin = {usuario: email, contraseña: password};
 
-            console.log(listaCuentas);
-            console.log(intentoLogin);
-
             const usuarioEncontrado = listaCuentas.find((cuenta) => {
                 return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
               });
 
-            if (listaCuentas.includes(usuarioEncontrado)) {                
-                login(); //falta definir funcion login                
+            if (listaCuentas.includes(usuarioEncontrado)) {              
+              localStorage.setItem('usuarioActivo', email)
+              window.location.href = path == '/login' ? '/' : path 
+              //para que refresque todo y el layout deje de mostrar el formulario de login
             } else {
                 alert("Usuario o contraseña incorrectos");
                 setEmail('');

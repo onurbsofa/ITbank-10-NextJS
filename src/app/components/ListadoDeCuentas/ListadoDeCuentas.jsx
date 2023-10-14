@@ -1,14 +1,11 @@
 import Link from "next/link"
+
 async function getUsers() {// aca haces el fetchin de los users completa
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
   const users = await res.json()
- 
+
   return users
 }
-
-import Link from 'next/link';
-import cuentasAPI from '../../api/cuentasBancarias.json'
-
 export default async function ListadoDeCuentas({params}) {
 
   const users = await getUsers()

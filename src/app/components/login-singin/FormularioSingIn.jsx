@@ -15,24 +15,23 @@ function RegisterCampos() {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailPattern.test(email);
 
-    if (isValid) {
-        const listaCuentas = cuentas;
-        const intentoLogin = {usuario: email, contraseña: password};
+    if (isValid) {      
+      
+      const listaCuentas = cuentas;
+      const intentoLogin = {usuario: email, contraseña: password};
 
-        console.log(listaCuentas);
-        console.log(intentoLogin);
+      const usuarioEncontrado = listaCuentas.find((cuenta) => {
+          return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
+        });
 
-        const usuarioEncontrado = listaCuentas.find((cuenta) => {
-            return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
-          });
-
-        if (listaCuentas.includes(usuarioEncontrado)) {                
-            register();//falta definir funcion register                
-        } else {
-            alert("Usuario o contraseña incorrectos");
-            setEmail('');
-            setPassword('');
-        }
+      if ( not (listaCuentas.includes(usuarioEncontrado))) {              
+        localStorage.setItem('usuarioActivo', email)
+        //POSTEAR EN LA API LOS DATOS DEL FORMULARIO, para crear el nuevo usuario
+      } else {
+          alert("Usuario o contraseña incorrectos");
+          setEmail('');
+          setPassword('');
+      }
             
     } else {
     // El correo electrónico no es válido
