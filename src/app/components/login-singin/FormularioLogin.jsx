@@ -3,12 +3,12 @@
 import styles from './login-singin.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
+import cuentas from '../cuentas/cuentas.json'
 
 function LoginCampos({ login }) {
   
-  const [contraseniaUsuario, setContraseniaUsuario] = useState('');
-  const [nombreUsuario, setNombreUsuario] = useState('');
-  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ function LoginCampos({ login }) {
         const isValid = emailPattern.test(email);
 
         if (isValid) {
-            const listaCuentas = JSON.parse(localStorage.getItem('Cuentas'));
+            const listaCuentas = cuentas;
             const intentoLogin = {usuario: email, contraseña: password};
 
             console.log(listaCuentas);
@@ -29,7 +29,7 @@ function LoginCampos({ login }) {
               });
 
             if (listaCuentas.includes(usuarioEncontrado)) {                
-                login();                
+                login(); //falta definir funcion login                
             } else {
                 alert("Usuario o contraseña incorrectos");
                 setEmail('');
@@ -38,7 +38,7 @@ function LoginCampos({ login }) {
                 
         } else {
         // El correo electrónico no es válido
-            setIsValidEmail(false);
+            alert("El correo electrónico no es válido");
             setPassword('');
             setEmail('');
         }
@@ -57,8 +57,8 @@ function LoginCampos({ login }) {
           type="text"
           name="usuario"
           placeholder="Ingrese un usuario"
-          value={nombreUsuario}
-          onChange={(e) => setNombreUsuario(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label className={styles.labelContrasenia}>Contraseña</label>
         <input
@@ -66,8 +66,8 @@ function LoginCampos({ login }) {
           type="password"
           name="contraseña"
           placeholder="Ingrese una contraseña"
-          value={contraseniaUsuario}
-          onChange={(e) => setContraseniaUsuario(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" className={styles.botonFormulario}>Enviar</button>
       </form>

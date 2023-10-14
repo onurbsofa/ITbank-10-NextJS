@@ -1,6 +1,5 @@
 import HistorialCuenta from "../../components/cuentas/HistorialCuenta";
 import TituloPagina from "../../components/globales/TituloPagina";
-import styles from "../../components/cuentas/cuentas.module.css";
 import saldos from '../../components/cuentas/saldos.json'
 
 function PagCuentaEspecifica({params}) {    
@@ -8,6 +7,7 @@ function PagCuentaEspecifica({params}) {
     const {especifica} = params;
     let saldoCuenta = 0;
 
+    // simula fetch de una api que devuelve la informacion cuenta especifica
     saldos.forEach(element => {
         if (element.name == especifica) {
             saldoCuenta = element.value
@@ -23,7 +23,7 @@ function PagCuentaEspecifica({params}) {
                 <HistorialCuenta Cuenta={especifica} ult_5={false}/>
             </div>
         </>
-     );
+    );
 }
 
 export default PagCuentaEspecifica;

@@ -11,7 +11,7 @@ function FilaHistorialCuenta({elemento}) {
                 <li className={styles.fecha}>{elemento.fecha}</li>
             </ul>            
         </li>
-     );
+    );
 }
 
 export default FilaHistorialCuenta;

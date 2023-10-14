@@ -19,11 +19,7 @@ const Navbar = () => {
         </div>   
 
         <div>
-          <ul className={styles.navBarList}>
-            <li className={styles.navBarListElem}>
-              {/*dependiendo de si el usuario esta logueado o no, se lo manda a login o al Inicio*/}
-              <a href="">Inicio</a>
-            </li>            
+          <ul className={styles.navBarList}>                     
             <li>
               <Link href="/login">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" className={styles.iconoUsuario}>

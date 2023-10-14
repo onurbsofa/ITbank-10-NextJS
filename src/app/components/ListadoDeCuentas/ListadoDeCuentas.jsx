@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import cuentasAPI from '../../api/cuentasBancarias.json'
 
 export default function ListadoDeCuentas({ cuentas }) {
   return (
@@ -19,17 +20,22 @@ export default function ListadoDeCuentas({ cuentas }) {
 
 export async function getStaticProps() {
   
-  const res = await fetch('../../api/cuentasBancarias.json');
-  const cuentas = await res.json();
+  //const res = await fetch('../../api/cuentasBancarias.json');
+  //const cuentas = await res.json();
+  const cuentas = cuentasAPI; 
 
   return {
     props: {
-      cuentas,
+      cuentas
     },
   };
 }
 
 export async function getStaticPaths() {
+
+  //const res = await fetch('../../api/cuentasBancarias.json');
+  //const cuentas = await res.json();
+  const cuentas = cuentasAPI; 
 
   // Generate paths for each cuenta
   const paths = cuentas.map((cuenta) => ({

@@ -5,12 +5,43 @@ import Link from "next/link";
 import styles from "./login-singin.module.css";
 
 function RegisterCampos() {
-  const [nombreUsuario, setNombreUsuario] = useState("");
-  const [contraseniaUsuario, setContraseniaUsuario] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-  }
+
+    // Validación del correo electrónico
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailPattern.test(email);
+
+    if (isValid) {
+        const listaCuentas = cuentas;
+        const intentoLogin = {usuario: email, contraseña: password};
+
+        console.log(listaCuentas);
+        console.log(intentoLogin);
+
+        const usuarioEncontrado = listaCuentas.find((cuenta) => {
+            return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
+          });
+
+        if (listaCuentas.includes(usuarioEncontrado)) {                
+            register();//falta definir funcion register                
+        } else {
+            alert("Usuario o contraseña incorrectos");
+            setEmail('');
+            setPassword('');
+        }
+            
+    } else {
+    // El correo electrónico no es válido
+        alert("El correo electrónico no es válido");
+        setPassword('');
+        setEmail('');
+    }
+  };
+
   return (
     <div className={styles.contenedorFormulario}>
       <form onSubmit={handleSubmit} className={styles.formularioLogin}>
@@ -23,8 +54,8 @@ function RegisterCampos() {
           type="text"
           name="usuario"
           placeholder="Ingrese un usuario"
-          value={nombreUsuario}
-          onChange={(e) => setNombreUsuario(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label className={styles.labelContrasenia}>Contraseña</label>
         <input
@@ -32,8 +63,8 @@ function RegisterCampos() {
           type="password"
           name="contraseña"
           placeholder="Ingrese una contraseña"
-          value={contraseniaUsuario}
-          onChange={(e) => setContraseniaUsuario(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" className={styles.botonFormulario}>Enviar</button>
       </form>

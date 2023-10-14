@@ -7,6 +7,9 @@ import React from 'react'
 
 const page = () => {
 
+    //deberia haber una api que devuelva los saldos de las cuentas al fetchearla
+    //actualizar cuando aprendamos backend
+
     const saldoARS = saldos[0].value;
     const saldoUSD = saldos[1].value;
 
@@ -28,7 +31,7 @@ const page = () => {
                 <HistorialCuenta Cuenta={'USD'} ult_5={true}/>
             </div>
         </>
-     );
+    );
 }
 
 export default page
