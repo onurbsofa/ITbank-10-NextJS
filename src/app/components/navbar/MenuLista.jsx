@@ -15,13 +15,16 @@ function MenuLista({isOpen}) {
                     <Link className={styles.menuLink} href="/cuentas">Cuentas</Link>
                 </li>
                 <li className={styles.navBarListElem}>
+                    <Link className={styles.menuLink} href="/tarjetas">Tarjetas</Link>
+                </li>
+                <li className={styles.navBarListElem}>
                     <Link className={styles.menuLink} href="/transferencias">Transferencias</Link>
                 </li>
                 <li className={styles.navBarListElem}>
-                    <Link className={styles.menuLink} href="/Pagos">Pagos</Link>
+                    <Link className={styles.menuLink} href="/pagos">Pagos</Link>
                 </li>
                 <li className={styles.navBarListElem}>
-                    <Link className={styles.menuLink} href="/Prestamos">Prestamos</Link>
+                    <Link className={styles.menuLink} href="/prestamos">Prestamos</Link>
                 </li>
                 <li className={styles.navBarListElem}>
                     <Link className={styles.menuLink} href="/conversor">Conversor</Link>

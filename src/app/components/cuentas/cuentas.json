@@ -1,3 +1,4 @@
 [
-  {"usuario": "correo1@ejemplo.com", "contraseña": "contraseña1"}
+  {"usuario": "correo1@ejemplo.com", "contraseña": "contraseña1"},
+  {"usuario": "brunofa@gmail.com", "contraseña": "contraseña2"}
 ]
