@@ -1,10 +1,17 @@
+import usuariosFake from "../api/cuentasBancarias.js";
+import Link from "next/link.js";
 
-export default function page() {
+export default function transferencia() {
   return (
     <div>
-        <h1>Transferencias</h1>
-        <div><h2>historial</h2></div>
-        <div><h2>realizar transeferencia</h2></div>
+      <h1>Listado de cuentas json probando</h1>
+      <ul>
+        {usuariosFake.map((usuario) => (
+        <Link href={`/transferencias/${usuario.id}`}>
+          <li key={usuario.id}>{usuario.nombre}</li>
+        </Link>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }

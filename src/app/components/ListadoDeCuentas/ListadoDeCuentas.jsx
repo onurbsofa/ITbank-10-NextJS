@@ -1,5 +1,5 @@
-import Link from "next/link"
-import {cuentas} from "../../api/cuentasBancarias.json" 
+import Link from "next/link";
+import { cuentas } from "../../api/cuentasBancarias.js";
 
 /* async function getUsers() {// aca haces el fetchin de los users completa
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -8,7 +8,6 @@ import {cuentas} from "../../api/cuentasBancarias.json"
   return users ///funcion para traer datos de una api y procesarlos
 }*/
 export default async function ListadoDeCuentas() {
-
   /* const users = await getUsers() // esto para ver las cuentas
           {users.map((user) => (
           <li key={user.id}>
@@ -16,18 +15,15 @@ export default async function ListadoDeCuentas() {
           </li>
         ))}
   */
- 
-  
 
   return (
     <div>
       <h1>Listado de cuentas:</h1>
       <ul>
-      {cuentas.map(({ cuenta,nombre }) => (
-      <li key={nombre}>{cuenta}</li>
-      ))}
+        {cuentas.map(({ cuenta, nombre }) => (
+          <li key={nombre}>{cuenta}</li>
+        ))}
       </ul>
     </div>
   );
 }
-

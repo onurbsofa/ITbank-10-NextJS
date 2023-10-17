@@ -1,7 +1,19 @@
+import usuariosFake from "../../api/cuentasBancarias.js";
+import Link from "next/link.js";
 
-export default function page() {
+export default function page(params) {
+
+  const id = params.id
+  const user = usuariosFake.find((usuario) => usuario.id === id)
+
   return (
-    <div>page</div>
+    <>
+    <button><Link href="/transferencias">
+      volver
+    </Link>
+    </button>
+    <div>Cuenta de {user.nombre} </div>
+    </>
   )
 }
 

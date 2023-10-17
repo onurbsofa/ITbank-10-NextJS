@@ -1,5 +1,6 @@
+const usuariosFake =
 [
-  {
+  { "id":1,
     "nombre": "Juan Perez",
     "usuario": "juan.perez@example.com",
     "contraseña": "password123",
@@ -60,7 +61,7 @@
       }
     ]
   },
-  {
+  { "id":2,
     "nombre": "Maria Rodriguez",
     "usuario": "maria.rodriguez@example.com",
     "contraseña": "securepass789",
@@ -110,7 +111,7 @@
     ]
   },
 
-  {
+  { "id":3,
     "nombre": "Laura Smith",
     "usuario": "laura.smith@example.com",
     "contraseña": "securepass123",
@@ -209,3 +210,5 @@
     ]
   }
 ]
+
+export default usuariosFake;
