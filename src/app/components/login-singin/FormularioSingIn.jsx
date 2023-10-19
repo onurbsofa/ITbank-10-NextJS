@@ -1,8 +1,9 @@
 'use client'
-
+/* const fs = require('fs') */
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./login-singin.module.css";
+import cuentas from '../cuentas/cuentas.json'
 
 function RegisterCampos() {
   const [password, setPassword] = useState("");
@@ -19,18 +20,27 @@ function RegisterCampos() {
       
       const listaCuentas = cuentas;
       const intentoLogin = {usuario: email, contraseña: password};
+/*       const addUserToJSON = (newUser) => {
+        const users = require('../cuentas/cuentas.json');
+        users.push(newUser);
+        const json = JSON.stringify(users);
+        fs.writeFileSync('../cuentas/cuentas.json', json);
+      } */
 
       const usuarioEncontrado = listaCuentas.find((cuenta) => {
           return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
         });
 
-      if ( not (listaCuentas.includes(usuarioEncontrado))) {              
-        localStorage.setItem('usuarioActivo', email)
-        //POSTEAR EN LA API LOS DATOS DEL FORMULARIO, para crear el nuevo usuario
+      if (listaCuentas.includes(usuarioEncontrado)) {              
+        alert("Usuario ya registrado");
+        setEmail('');
+        setPassword('');
       } else {
-          alert("Usuario o contraseña incorrectos");
-          setEmail('');
-          setPassword('');
+        listaCuentas.push(intentoLogin);
+        alert("Usuario registrado con éxito");
+        localStorage.setItem('usuarioActivo', email)
+        window.location.href = '/'
+        /* addUserToJSON(intentoLogin); */
       }
             
     } else {
