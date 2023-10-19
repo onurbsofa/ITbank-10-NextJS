@@ -56,7 +56,10 @@
   color: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 780px) {
+  .footer{
+    border-radius:80% 80% 0 0;}
+
   .footer-links {
     flex-direction: row;
     align-items: flex-start;

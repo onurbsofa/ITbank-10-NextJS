@@ -1,3 +1,9 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import tarjeta from './assets/tarjeta.svg';
+import pago from './assets/pago.svg';
+import qr from './assets/qr.svg';
+import support from './assets/support.svg';
 import "../../styles/globals.css"
 
 export default async function Home() { 
@@ -12,44 +18,36 @@ export default async function Home() {
         <div className="banner-text">
           <h1>Prestamos a tasa cero</h1>
           <p>¡Solicitá tu préstamo en 3 simples pasos!</p>
-          <button className="btn-banner">Quiero saber más</button>
+          <Link href= "/prestamos"> <button className="btn-banner">Quiero saber más</button></Link>
         </div>
       </section>
       <section className="dash-boards">
-      <div className="dashboard-grid">
-          <div className="dashboard-item item1">
-            <h2>Panel 1</h2>
-            <p>Texto de ejemplo para el Panel 1</p>
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Imagen de ejemplo"
-            />
-          </div>
+          <div className="dashboard-item item">
+          <div class="text-content">
+            <h2>Obtené tu tarjeta</h2>
+            <p> Adquirí tu tarjeta de débito VISA de Itbank de forma sencilla y comienza a disfrutar de todas las ventajas que ofrece.</p>
+            <Link href= "/"> <button className="btn-banner">Conocer más</button> </Link></div>
+         <Image alt="tarjeta" src={tarjeta}/></div>
           <div className="dashboard-item item2">
-            <h2>Panel 2</h2>
-            <p>Texto de ejemplo para el Panel 2</p>
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Imagen de ejemplo"
-            />
-          </div>
+          <div class="text-content">
+            <h2>Transferencias Instantáneas</h2>
+            <p>Facilitando tus transacciones de manera rápida y segura.</p>  
+            <Link href= "/transferencias"> <button className="btn-banner item2">Conocer más</button> </Link></div>     
+             <Image alt="pago" src={pago} /></div>
           <div className="dashboard-item item3">
-            <h2>Panel 3</h2>
-            <p>Texto de ejemplo para el Panel 3</p>
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Imagen de ejemplo"
-            />
+          <div class="text-content">
+            <h2>Paga con QR</h2>
+            <p>Aprovecha la velocidad y comodidad al realizar tus pagos utilizando códigos QR.</p> 
+            <Link href= "/qr"> <button className="btn-banner item3">Conocer más</button> </Link></div>     
+            <Image alt="qr" src={qr} />
           </div>
           <div className="dashboard-item item4">
-            <h2>Panel 4</h2>
-            <p>Texto de ejemplo para el Panel 4</p>
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Imagen de ejemplo"
-            />
+          <div class="text-content">
+            <h2>Atención disponible 24/7</h2>
+            <p>Comunícate con nuestro equipo de soporte en cualquier momento y recibe asistencia instantánea.</p>
+            <Link href= "/contact"> <button className="btn-banner item4">Conocer más</button> </Link></div>     
+            <Image alt="support" src={support} />
           </div>
-        </div>
       </section>
     </main>
     </>
