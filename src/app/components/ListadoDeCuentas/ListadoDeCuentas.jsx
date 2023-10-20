@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cuentas } from "../../api/cuentasBancarias.js";
+import { transferencias } from "../../api/cuentasBancarias.js";
 
 /* async function getUsers() {// aca haces el fetchin de los users completa
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -20,8 +20,8 @@ export default async function ListadoDeCuentas() {
     <div>
       <h1>Listado de cuentas:</h1>
       <ul>
-        {cuentas.map(({ cuenta, nombre }) => (
-          <li key={nombre}>{cuenta}</li>
+        {transferencias.map(({ transferencia, id }) => (
+          <li key={id}>{transferencia.fecha}</li>
         ))}
       </ul>
     </div>
