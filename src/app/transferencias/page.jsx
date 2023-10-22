@@ -4,7 +4,7 @@ import Link from "next/link.js";
 export default function transferencia() {
   return (
     <div>
-      <h1>Listado de cuentas json probando</h1>
+      <h1>transferencias</h1>
       <ul>
         {usuariosFake.map((usuario) => (
         <Link href={`/transferencias/${usuario.id}`}>
