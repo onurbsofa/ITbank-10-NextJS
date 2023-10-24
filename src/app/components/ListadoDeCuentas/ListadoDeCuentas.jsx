@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { transferencias } from "../../api/cuentasBancarias.js";
+import { transferencias } from "../../api/transferencias.js";
 
 /* async function getUsers() {// aca haces el fetchin de los users completa
   const res = await fetch('https://jsonplaceholder.typicode.com/users')

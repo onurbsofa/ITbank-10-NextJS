@@ -1,4 +1,4 @@
-import usuariosFake from "../api/cuentasBancarias.js";
+import transferencias from "../api/transferencias.js";
 import Link from "next/link.js";
 
 export default function transferencia() {
@@ -6,10 +6,12 @@ export default function transferencia() {
     <div>
       <h1>transferencias</h1>
       <ul>
-        {usuariosFake.map((usuario) => (
-        <Link href={`/transferencias/${usuario.id}`}>
-          <li key={usuario.id}>{usuario.nombre}</li>
-        </Link>
+        {transferencias.map((transferencia) => (
+          <Link href={`/transferencias/${transferencia.id}`}>
+            <li key={transferencia.id}>{transferencia.fecha}
+            <p>{transferencia.monto}</p>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
