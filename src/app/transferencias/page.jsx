@@ -4,7 +4,7 @@ import Link from "next/link.js";
 export default function transferencia() {
   return (
     <div>
-      <h1>transferencias</h1>
+      <h1></h1>
       <ul>
         {transferencias.map((transferencia) => (
           <Link href={`/transferencias/${transferencia.id}`}>
