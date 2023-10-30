@@ -4,9 +4,8 @@ const TransactionLayout = ({ children }) => {
 
 
     return (
-        <div>LAyout del trans
-        
-        
+        <div>
+                  <h1>Transferencias</h1>
         {children}
         
         </div>
