@@ -5,7 +5,7 @@ export default function page({params}) {
 
   return (
     <>
-      <h1>Detalle de transferencia</h1>
+      <h1>{tarjetas.nombre}</h1>
       <p>id: {id}</p>
     </>
   );
