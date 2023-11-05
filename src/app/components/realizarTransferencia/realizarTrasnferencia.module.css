@@ -31,12 +31,12 @@
 }
 
 .selectedAccount {
-    background-color: #007bff;
+    background-color: #55254e;
     color: #fff;
 }
 
 .transferButton {
-    background-color: #007bff;
+    background-color: #ca5095;
     color: #fff;
     border: none;
     border-radius: 5px;

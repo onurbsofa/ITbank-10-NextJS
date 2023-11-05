@@ -11,7 +11,7 @@ const RealizarTransferencia = () => {
     };
 
     const handleTransferClick = () => {
-        // Handle transfer logic here
+        alert(`Transfering from ${selectedAccount.name}`);
     };
 
     const accounts = [
