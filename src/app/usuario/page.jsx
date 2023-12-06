@@ -3,7 +3,8 @@ import { redirect } from "next/navigation";
 
 function PaginaUsuario() { 
 
-  redirect('/usuario/' + localStorage.getItem('usuarioActivo'))
+
+  redirect('/usuario/' + localStorage.getItem('username'))
 
   return (
     <>

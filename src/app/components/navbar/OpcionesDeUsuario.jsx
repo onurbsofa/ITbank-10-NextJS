@@ -11,7 +11,8 @@ function OpcionesLista({ isOpen }) {
   }
 
   const handleCerrarSesion = () => {
-    localStorage.removeItem('usuarioActivo');
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
     window.location.href = '/login' // se soluciono asi para que se recargue la pagina y el layout pueda redireccionar correctamente cuando no se esta logueado
   }
 

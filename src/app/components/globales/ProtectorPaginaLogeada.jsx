@@ -4,7 +4,7 @@ import { redirect, usePathname } from 'next/navigation';
 
 export default function ProtectorPagina ({children}) {  
   
-  const usuarioActivo = typeof window !== 'undefined' ? localStorage.getItem('usuarioActivo') : undefined;
+  const usuarioActivo = typeof window !== 'undefined' ? localStorage.getItem('username') : undefined;
   
   return (
     <>      

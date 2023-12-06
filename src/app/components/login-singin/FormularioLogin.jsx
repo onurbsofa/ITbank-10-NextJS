@@ -5,45 +5,41 @@ import { useState } from 'react';
 import Link from 'next/link';
 import cuentas from '../cuentas/cuentas.json'
 import { redirect, usePathname } from 'next/navigation';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function LoginCampos() {
-  
-  const [email, setEmail] = useState('');
+
+  const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const path = usePathname()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        // Validación del correo electrónico
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isValid = emailPattern.test(email);
 
-        if (isValid) {
-            const listaCuentas = cuentas;
-            const intentoLogin = {usuario: email, contraseña: password};
-
-            const usuarioEncontrado = listaCuentas.find((cuenta) => {
-                return cuenta.usuario === intentoLogin.usuario && cuenta.contraseña === intentoLogin.contraseña;
-              });
-
-            if (listaCuentas.includes(usuarioEncontrado)) {              
-              localStorage.setItem('usuarioActivo', email)
-              window.location.href = path == '/login' ? '/' : path 
-              //para que refresque todo y el layout deje de mostrar el formulario de login
-            } else {
-                alert("Usuario o contraseña incorrectos");
-                setEmail('');
-                setPassword('');
-            }
-                
-        } else {
-        // El correo electrónico no es válido
-            alert("El correo electrónico no es válido");
-            setPassword('');
-            setEmail('');
+  const login = async (username, password) => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/api-auth/', {
+        headers: {
+          Authorization: `Basic ${btoa(`${username}:${password}`)}`
         }
-      };
+      });
+
+      if (response.status === 200) {
+        // Store user credentials in local storage or cookie
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+        router.push('/usuario/' + username);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Llamar a la función login
+    await login(username, password);
+  };
   
 
   return (
@@ -58,8 +54,8 @@ function LoginCampos() {
           type="text"
           name="usuario"
           placeholder="Ingrese un usuario"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUser(e.target.value)}
         />
         <label className={styles.labelContrasenia}>Contraseña</label>
         <input
